@@ -19,12 +19,11 @@ app.use(function(req, res, next) {
 });
 
 
-if (process.env.NODE_ENV !== 'production') {
-    // Load in configs from your .env file
-    require('dotenv').config();
-
-}
-
+// if (process.env.NODE_ENV !== 'production') {
+//     // Load in configs from your .env file
+//     require('dotenv').config();
+// }
+//
 
 // Set our port
 app.set('port', process.env.PORT || 5001);
