@@ -20,13 +20,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-
-
+// If not in production load local config
 if (env === 'production') {
     // Load in configs from your .env file
     require('dotenv').config();
 }
-
 
 // Set our port
 app.set('port', process.env.PORT || 5001);
