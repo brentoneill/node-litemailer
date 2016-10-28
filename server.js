@@ -8,7 +8,7 @@ const express = require('express');
 const app = express();
 const router = new express.Router();
 const bodyParser = require('body-parser');
-const http = require('http');
+const https = require('https');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -30,5 +30,6 @@ app.use('/api', api);
 
 // Little hack to ping heroku every so often
 setInterval(function() {
-    http.get(process.env.HEROKU_URL);
+    https.get(process.env.HEROKU_URL);
+    console.log('pinggggged');
 }, 300000); // every 5 minutes (300000)
