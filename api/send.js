@@ -73,7 +73,7 @@ router.post('/send/:mailer', (req, res, next) => {
 
     mailOptions = Object.assign(mailOptions, req.body);
 
-    // send mail with defined transport object
+    // Send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
             console.log(error);

@@ -10,9 +10,18 @@ const router = new express.Router();
 const bodyParser = require('body-parser');
 const https = require('https');
 
+// Used to barse the request body as json
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// Allow CORS request for local host interactions
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+// Set our port
 app.set('port', process.env.PORT || 5001);
 
 // Listen for requests
