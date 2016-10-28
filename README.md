@@ -23,4 +23,4 @@ At the very least, you will need to input your GMAIL_USER and GMAIL_PASS so that
 
 ## Deploy to Heroku
 
-__deploy to heroku button goes here...__
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
