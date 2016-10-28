@@ -78,7 +78,7 @@ router.post('/send/:mailer', (req, res, next) => {
         if (error) {
             console.log(error);
             // Send a sad little error back to the client
-            return res.send({
+            return res.send(error.responseCode, {
                 message: 'Could not send your email :(',
                 error,
                 mailOptions
