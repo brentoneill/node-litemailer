@@ -7,6 +7,8 @@ const router = new express.Router();
 const bodyParser = require('body-parser');
 const https = require('https');
 
+const env = process.env.NODE_ENV || 'development';
+
 // Used to barse the request body as json
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -19,11 +21,12 @@ app.use(function(req, res, next) {
 });
 
 
-// if (process.env.NODE_ENV !== 'production') {
-//     // Load in configs from your .env file
-//     require('dotenv').config();
-// }
-//
+
+if (env === 'production') {
+    // Load in configs from your .env file
+    require('dotenv').config();
+}
+
 
 // Set our port
 app.set('port', process.env.PORT || 5001);
