@@ -77,15 +77,17 @@ router.post('/send/:mailer', (req, res, next) => {
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
             console.log(error);
+            // Send a sad little error back to the client
             return res.send({
-                message: 'Could not send your email',
+                message: 'Could not send your email :(',
                 error,
                 mailOptions
             });
         }
 
+        // Send a happy little response back to the client
         return res.send({
-            status: 'Message sent: ' + info.response,
+            status: 'Message sent: ' + info.response + ' :)',
             mailOptions,
             _sendDate: new Date()
         });
