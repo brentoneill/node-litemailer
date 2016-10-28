@@ -1,7 +1,10 @@
 'use strict';
 
-// Load in configs from your .env file
-require('dotenv').config();
+if (process.env !== 'production') {
+    // Load in configs from your .env file
+    require('dotenv').config();
+
+}
 
 // Bring in express and create an instance of the router - to be used w/ middleware
 const express = require('express');
