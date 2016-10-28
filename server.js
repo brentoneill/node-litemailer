@@ -1,11 +1,5 @@
 'use strict';
 
-if (process.env !== 'production') {
-    // Load in configs from your .env file
-    require('dotenv').config();
-
-}
-
 // Bring in express and create an instance of the router - to be used w/ middleware
 const express = require('express');
 const app = express();
@@ -23,6 +17,14 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+
+if (process.env.NODE_ENV !== 'production') {
+    // Load in configs from your .env file
+    require('dotenv').config();
+
+}
+
 
 // Set our port
 app.set('port', process.env.PORT || 5001);
