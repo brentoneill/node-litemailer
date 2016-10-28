@@ -18,13 +18,16 @@
             "required": true
         },
         "AWS_ACCESS_KEY_ID": {
-            "description": "AWS SES Acceess Key Id. Needed for sending mail through the AWS SES transporter. Also requires AWS_SECRET_ACCESS_KEY to be set"
+            "description": "AWS SES Acceess Key Id. Needed for sending mail through the AWS SES transporter. Also requires AWS_SECRET_ACCESS_KEY to be set",
+            "required": false
         },
         "AWS_SECRET_ACCESS_KEY": {
-            "description": "AWS SES Secret Access Key. Needed for sending mail through the AWS SES transporter. Also requires AWS_ACCESS_KEY_ID to be set"
+            "description": "AWS SES Secret Access Key. Needed for sending mail through the AWS SES transporter. Also requires AWS_ACCESS_KEY_ID to be set",
+            "required": false
         },
         "SENDGRID_API_KEY": {
-            "description": "SendGrid API Key. Required to send mail w/ the SendGrid transporter"
+            "description": "SendGrid API Key. Required to send mail w/ the SendGrid transporter",
+            "required": false
         }
     }
 }
