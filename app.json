@@ -1,7 +1,30 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-sample",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
+    "name": "Light weight nodemailer server",
+    "description": "A barebones Node.js app using Express 4 and nodemailer to send some emails for ya",
+    "repository": "https://github.com/brentoneill/node-litemailer",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Envelope_alt_font_awesome.svg/2000px-Envelope_alt_font_awesome.svg.png",
+    "keywords": ["node", "express", "static"],
+    "env": {
+        "GMAIL_USER": {
+            "description": "The gmail user name you want to send email from",
+            "required": true
+        },
+        "GMAIL_PASS": {
+            "description": "Password of the gmail user you are sending emails from",
+            "required": true
+        },
+        "HEROKU_URL": {
+            "description": "Url of your heroku instance so you can ping it!",
+            "required": true
+        },
+        "AWS_ACCESS_KEY_ID": {
+            "description": "AWS SES Acceess Key Id. Needed for sending mail through the AWS SES transporter. Also requires AWS_SECRET_ACCESS_KEY to be set",
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "description": "AWS SES Secret Access Key. Needed for sending mail through the AWS SES transporter. Also requires AWS_ACCESS_KEY_ID to be set",
+        },
+        "SENDGRID_API_KEY": {
+            "description": "SendGrid API Key. Required to send mail w/ the SendGrid transporter",
+        }
+    }
 }
