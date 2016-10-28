@@ -33,6 +33,8 @@ let transporterMandrill = nodemailer.createTransport(mandrillTransport({
     }
 }));
 
+console.log(process.env.SENDGRID_API_KEY);
+
 // SendGrid Transporter
 let transporterSG = nodemailer.createTransport(sgTransport({
     auth: {
@@ -76,15 +78,13 @@ router.post('/send/:mailer', (req, res, next) => {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-            res.send({
+            console.log(error);
+            return res.send({
                 message: 'Could not send your email',
                 error,
                 mailOptions
             });
-            return console.log(error);
         }
-
-        console.log('Message sent: ' + info.response);
 
         return res.send({
             status: 'Message sent: ' + info.response,
