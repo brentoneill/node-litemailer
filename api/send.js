@@ -33,8 +33,6 @@ let transporterMandrill = nodemailer.createTransport(mandrillTransport({
     }
 }));
 
-console.log(process.env.SENDGRID_API_KEY);
-
 // SendGrid Transporter
 let transporterSG = nodemailer.createTransport(sgTransport({
     auth: {

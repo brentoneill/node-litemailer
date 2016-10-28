@@ -27,7 +27,6 @@ const api = require('./api/send');
 // Tell the app to use the routes with /api prefix
 app.use('/api', api);
 
-
 // Little hack to ping heroku every so often
 setInterval(function() {
     https.get(process.env.HEROKU_URL);
