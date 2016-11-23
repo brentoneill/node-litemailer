@@ -42,7 +42,7 @@ const api = require('./api/send');
 app.use('/api', api);
 
 // Little hack to ping heroku every so often
-setInterval(function() {
-    https.get(process.env.HEROKU_URL);
-    console.log('pinggggged');
-}, 300000); // every 5 minutes (300000)
+// setInterval(function() {
+//     https.get(process.env.HEROKU_URL);
+//     console.log('pinggggged');
+// }, 300000); // every 5 minutes (300000)
