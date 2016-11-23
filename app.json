@@ -13,10 +13,6 @@
             "description": "Password of the gmail user you are sending emails from",
             "required": true
         },
-        "HEROKU_URL": {
-            "description": "Url of your heroku instance so you can ping it!",
-            "required": true
-        },
         "AWS_ACCESS_KEY_ID": {
             "description": "AWS SES Acceess Key Id. Needed for sending mail through the AWS SES transporter. Also requires AWS_SECRET_ACCESS_KEY to be set",
             "required": false
